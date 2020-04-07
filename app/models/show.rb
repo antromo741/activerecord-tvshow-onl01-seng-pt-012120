@@ -6,7 +6,7 @@ end
 
 
 def self.most_popular_show
-self.where("rating = ?", self.highest_rating)
+self.where("rating = ?", self.highest_rating).first
 end
 
 def self.lowest_rating
@@ -22,7 +22,7 @@ def self.ratings_sum
 end
 
 def self.popular_shows
-  selfwhere("rating >= ?",5)
+  self.where("rating >= ?",5)
 end
 
 def self.shows_by_alphabetical_order
